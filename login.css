@@ -1,0 +1,94 @@
+/* Background Image */
+body {
+    font-family: Arial, sans-serif;
+    background: url('loginbg.jpg') no-repeat center center/cover; /* Change this to your background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Box */
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+/* Title */
+h2 {
+    color: #FFD700; /* Golden color */
+    margin-bottom: 5px;
+}
+
+p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #87CEEB; /* Sky Blue */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+/* Password Toggle */
+.toggle-password {
+    position: absolute;
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    background: #FFD700;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #DAA520;
+}
+
+/* Forgot Password */
+.forgot {
+    margin-top: 10px;
+}
+
+.forgot a {
+    color: #87CEEB;
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}

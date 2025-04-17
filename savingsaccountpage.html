@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidu International Limited - Savings Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('sidusave.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: gold;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background: goldenrod;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Start Saving with Sidu International Limited</h2>
+        <p>Savings is the key to financial growth. At Sidu, we offer secure and high-interest savings accounts to help you achieve your financial goals. Save now and watch your money grow with an annual interest increase!</p>
+
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='registration.html'">Register (KES 500 Required)</button>
+
+        <h3>Choose Your Savings Account Type</h3>
+        <form action="process-savings.php" method="POST" enctype="multipart/form-data">
+
+            <label>Account Type:</label>
+            <select name="account_type" required>
+                <option value="personal">Personal Savings Account</option>
+                <option value="joint">Joint Savings Account</option>
+            </select>
+
+            <label>Full Name:</label>
+            <input type="text" name="full_name" required>
+
+            <label>ID Number:</label>
+            <input type="text" name="id_number" required>
+
+            <label>Upload ID Front:</label>
+            <input type="file" name="id_front" accept="image/*" required>
+
+            <label>Upload ID Back:</label>
+            <input type="file" name="id_back" accept="image/*" required>
+
+            <label>Upload Selfie:</label>
+            <input type="file" name="selfie" accept="image/*" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" required>
+
+            <h3>Savings Calculator</h3>
+            <label>Initial Deposit (KES):</label>
+            <input type="number" id="initialDeposit" required>
+
+            <label>Monthly Contribution (KES):</label>
+            <input type="number" id="monthlyContribution" required>
+
+            <label>Duration (Years):</label>
+            <input type="number" id="years" required>
+
+            <label>Estimated Savings After a Year (KES):</label>
+            <input type="text" id="savingsOutput" readonly>
+
+            <button type="button" onclick="calculateSavings()">Calculate Savings</button>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        function calculateSavings() {
+            let initialDeposit = parseFloat(document.getElementById('initialDeposit').value);
+            let monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
+            let years = parseFloat(document.getElementById('years').value);
+            let interestRate = 0.08; // Example: 8% annual interest
+
+            let totalSavings = initialDeposit;
+            for (let i = 0; i < years * 12; i++) {
+                totalSavings += monthlyContribution;
+                totalSavings += (totalSavings * interestRate) / 12;
+            }
+
+            document.getElementById('savingsOutput').value = totalSavings.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDU INTERNATIONAL LIMITED - Machinery Loan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('machinery.jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: goldenrod;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .slideshow-container {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .slide.active {
+            display: block;
+        }
+        button {
+            background: goldenrod;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .loan-form {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .loan-form h2 {
+            color: goldenrod;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="file"] {
+            background: white;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SIDU INTERNATIONAL LIMITED - Machinery Loan</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="machinery-loan.html">Machinery Loan</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="slideshow-container">
+    <div class="slide active">
+        <h2>What is a Machinery Loan?</h2>
+        <p>A loan designed to help businesses and individuals acquire machinery for productivity.</p>
+    </div>
+    <div class="slide">
+        <h2>Who Can Apply?</h2>
+        <p>Individuals, businesses, and groups looking to purchase machinery.</p>
+    </div>
+    <div class="slide">
+        <h2>Loan Amount & Repayment</h2>
+        <p>Loan amounts vary, and repayment plans are flexible.</p>
+    </div>
+</div>
+
+<button onclick="prevSlide()">❮ Previous</button>
+<button onclick="nextSlide()">Next ❯</button>
+
+<div class="loan-form">
+    <h2>Machinery Loan Application</h2>
+    <label>Full Name:</label>
+    <input type="text" placeholder="Enter your full name" required>
+
+    <label>Select Machinery Type:</label>
+    <select required>
+        <option>Tractor</option>
+        <option>Excavator</option>
+        <option>Forklift</option>
+        <option>Construction Equipment</option>
+    </select>
+
+    <label>Machinery Model:</label>
+    <input type="text" placeholder="Enter machinery model" required>
+
+    <label>Serial Number:</label>
+    <input type="text" placeholder="Enter serial number" required>
+
+    <label>Upload Machine Photo:</label>
+    <input type="file" accept="image/*" required>
+
+    <label>Upload Front & Back ID:</label>
+    <input type="file" accept="image/*" required>
+    <input type="file" accept="image/*" required>
+
+    <label>Upload Business/Group Documents (if applicable):</label>
+    <input type="file" accept=".pdf,.jpg,.png">
+
+    <label>Upload Receipts or Papers:</label>
+    <input type="file" accept=".pdf,.jpg,.png">
+
+    <label>Loan Amount (KES):</label>
+    <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+
+    <label>Loan Duration (Months):</label>
+    <input type="number" id="loanDuration" placeholder="Enter months" required>
+
+    <button onclick="calculateLoan()">Calculate EMI</button>
+
+    <h3>Estimated Monthly Installment: <span id="emiResult">0</span> KES</h3>
+
+    <button type="submit">Submit Application</button>
+</div>
+
+<footer>
+    <p>&copy; 2025 SIDU INTERNATIONAL LIMITED</p>
+    <p>Location: Kiambu Indian Bazaar & Kiserian Branch</p>
+    <p>Phone: 0722609727 / 0718731551</p>
+    <p>Email: siduinternational@gmail.com</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        showSlide(slideIndex);
+    }
+
+    function calculateLoan() {
+        let loanAmount = document.getElementById("loanAmount").value;
+        let loanDuration = document.getElementById("loanDuration").value;
+        let interestRate = 10 / 100 / 12; // 10% annual interest rate
+        let emi = (loanAmount * interestRate * Math.pow(1 + interestRate, loanDuration)) / (Math.pow(1 + interestRate, loanDuration) - 1);
+        document.getElementById("emiResult").innerText = Math.round(emi);
+    }
+</script>
+
+</body>
+</html>

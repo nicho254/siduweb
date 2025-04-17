@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDU INTERNATIONAL LIMITED - Home</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('sidulogo1.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #004080;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background: #ffcc00;
+            color: #004080;
+            border-radius: 5px;
+        }
+
+        /* Slideshow Styling */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 80px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .active {
+            display: block;
+            animation: fade 1s;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+
+        /* Section Styling */
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #004080;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .footer-section div {
+            margin: 10px;
+            width: 30%;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-section div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">FAQs</a>
+        <a href="#">Loans</a>
+        <a href="#">Savings</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slide active">Welcome to Sidu International Limited - Empowering You Financially
+Sidu International Limited empowers you financially by providing accessible and tailored loan solutions that help individuals and businesses
+ achieve their financial goals.
+ Whether you need funds for business expansion, emergencies, asset acquisition, or construction, 
+Sidu offers flexible loan options, including Biashara (SME) Loans, Logbook Loans, and Personal Loans. 
+With a seamless online application process, KYC verification, and quick disbursement, 
+Sidu ensures that financial support is within reach when you need it most. Additionally, 
+Sidu promotes financial growth through interest-earning group accounts, 
+where members can save and invest collectively while maintaining accountability.
+ By integrating technology, fraud detection, and secure payment options, 
+Sidu creates a reliable and transparent financial ecosystem that supports economic empowerment and stability.</div>
+        <div class="slide">Apply for Loans Easily – Quick Approval & Competitive Rates
+           Sidu International Limited makes accessing loans fast and hassle-free with quick approvals, 
+           ensuring you get the funds you need without unnecessary delays. 
+      With competitive interest rates, Sidu offers affordable repayment plans that suit your financial situation.
+ The seamless online application process allows you to apply easily from anywhere, with straightforward KYC verification and document uploads.
+ Whether it's a business, personal, or emergency loan, 
+ Sidu provides a smooth and efficient experience,
+ empowering you to achieve your financial goals with ease.</div>
+        <div class="slide">Join Chama Savings – Grow Your Wealth & Secure Your Future</div>
+    </div>
+
+    <script>
+        let index = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, i) => slide.style.display = 'none');
+            index++;
+            if (index > slides.length) index = 1;
+            slides[index - 1].style.display = 'block';
+            setTimeout(showSlides, 5000);
+        }
+        showSlides();
+    </script>
+
+    <!-- Why Choose Sidu Section -->
+    <div class="container">
+        <h1>Why Choose Sidu?</h1>
+        <div class="section">
+            <ul>
+                <li>Quick loan approval process.</li>
+                <li>Competitive interest rates.</li>
+                <li>Flexible repayment terms.</li>
+                <li>Secure and reliable transactions.</li>
+                <li>Easy online application process.</li>
+                <li>Chama savings with high-interest benefits.</li>
+                <li>Financial education and loan guidance.</li>
+                <li>Strong customer support system.</li>
+                <li>Regulated and trusted institution.</li>
+                <li>Innovative loan products for every need.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- How to Register & Apply for Loans -->
+    <div class="container">
+        <h1>How to Register & Apply for Loans</h1>
+        <div class="section">
+            <ol>
+                <li>Visit our registration page.</li>
+                <li>Upload your ID and selfie for verification.</li>
+                <li>Pay a one-time registration fee of KES 500 via M-Pesa.</li>
+                <li>Receive confirmation and login credentials.</li>
+                <li>Apply for a loan based on your needs.</li>
+                <li>Wait for quick approval and receive your funds.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Chama Loans & Savings -->
+    <div class="container">
+        <h1>Chama Loans & Savings</h1>
+        <div class="section">
+            <p>Join a **Chama Group** and enjoy:</p>
+            <ul>
+                <li>High-interest savings.</li>
+                <li>Flexible contribution options.</li>
+                <li>Easy access to group loans.</li>
+                <li>Secure and transparent transactions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact & Footer -->
+    <footer>
+        <h2>Contact Us</h2>
+        <div class="footer-section">
+            <div>
+                <h3>📍 Locations</h3>
+                <p>Kiambu Indian Bazaar (140m from prisons)</p>
+                <p>Kiserian, Toiyanka Business Centre, Room 41 & 42</p>
+            </div>
+            <div>
+                <h3>📞 Call Us</h3>
+                <p>0722609727 / 0718731551</p>
+            </div>
+            <div>
+                <h3>📧 Email</h3>
+                <p>siduinternational@gmail.com</p>
+            </div>
+        </div>
+        <p>© 2025 Sidu International Limited | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

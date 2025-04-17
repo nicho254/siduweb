@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidu Deposit & Withdrawal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        header {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: linear-gradient(to right, #0077b6, #ffd700);
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0077b6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f87;
+        }
+    </style>
+</head>
+<body style="background-image: url('deposit.jpeg');">
+
+<header>
+    <div class="slide-container">
+        <div class="slide">Secure your future with Sidu International Limited!</div>
+        <div class="slide">Enjoy flexible deposits and easy withdrawals anytime.</div>
+        <div class="slide">Grow your savings with competitive interest rates.</div>
+    </div>
+</header>
+
+<div class="content">
+    <h2>Why Save with Sidu?</h2>
+    <p>
+        Saving with **Sidu International Limited** ensures **financial security and stability**. Our savings plans 
+        offer **competitive interest rates, easy deposits, and secure withdrawals**, helping you achieve your goals. 
+        Whether you're saving for business growth, emergencies, or future investments, we make it easy and rewarding.
+    </p>
+
+    <h3>Deposit & Withdrawal Methods</h3>
+    <p><strong>Deposit Methods:</strong> You can deposit funds via **M-Pesa, Bank Transfer, or Direct Cash Deposit**.</p>
+    <p><strong>Withdrawal Methods:</strong> Withdraw funds via **M-Pesa, Bank Transfer, or Over-the-Counter Cash Pickup**.</p>
+</div>
+
+<div class="container">
+    <h2>Deposit Funds</h2>
+    <form>
+        <input type="number" placeholder="Enter Deposit Amount" required>
+        <select>
+            <option value="mpesa">M-Pesa</option>
+            <option value="bank">Bank Transfer</option>
+            <option value="cash">Direct Cash Deposit</option>
+        </select>
+        <button type="submit">Deposit</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Withdraw Funds</h2>
+    <form>
+        <input type="number" placeholder="Enter Withdrawal Amount" required>
+        <select>
+            <option value="mpesa">M-Pesa</option>
+            <option value="bank">Bank Transfer</option>
+            <option value="cash">Over-the-Counter Cash</option>
+        </select>
+        <button type="submit">Withdraw</button>
+    </form>
+</div>
+
+<script>
+    // Sliding Header Animation
+    let currentIndex = 0;
+    function slideHeader() {
+        const slides = document.querySelector('.slide-container');
+        currentIndex = (currentIndex + 1) % 3;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    setInterval(slideHeader, 3000);
+</script>
+
+</body>
+</html>
