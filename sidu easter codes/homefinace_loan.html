@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidu Home Financing Loan</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('home.jpeg') no-repeat center center/cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #0077b6;
+        }
+
+        /* Slideshow Styling */
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide 10s infinite;
+        }
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            color: #fff;
+            background: #0077b6;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Form Styling */
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #0077b6;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #005f8a;
+        }
+
+        /* Loan Calculator */
+        .loan-calculator {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 255, 0.1);
+            border-radius: 8px;
+        }
+        #emi-result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0077b6;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Home Financing Loan Application</h1>
+
+        <!-- Animated Slideshow -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">🏡 **Secure Your Dream Home** – Flexible repayment plans.</div>
+                <div class="slide">📜 **Fast & Easy Process** – Upload ID, KRA PIN & Next of Kin.</div>
+                <div class="slide">💰 **Low Interest Rates** – Affordable monthly installments.</div>
+            </div>
+        </div>
+
+        <!-- Loan Application Form -->
+        <form id="loanForm">
+            <h2>Personal Information</h2>
+            <label>Full Name</label>
+            <input type="text" required>
+
+            <label>ID Number</label>
+            <input type="text" required>
+
+            <label>Email Address</label>
+            <input type="email" required>
+
+            <label>Phone Number</label>
+            <input type="text" required>
+
+            <h2>Next of Kin Details</h2>
+            <label>Name</label>
+            <input type="text" required>
+
+            <label>Phone Number</label>
+            <input type="text" required>
+
+            <h2>Document Uploads</h2>
+            <label>ID Front</label>
+            <input type="file" accept="image/*, .pdf" required>
+
+            <label>ID Back</label>
+            <input type="file" accept="image/*, .pdf" required>
+
+            <label>KRA PIN</label>
+            <input type="file" accept="image/*, .pdf" required>
+
+            <h2>Loan Calculator</h2>
+            <div class="loan-calculator">
+                <label>Loan Amount (KES)</label>
+                <input type="number" id="loanAmount" placeholder="Enter amount" required>
+
+                <label>Loan Duration (Months)</label>
+                <input type="number" id="loanDuration" placeholder="Enter duration" required>
+
+                <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+                <div id="emi-result"></div>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        function calculateEMI() {
+            let amount = document.getElementById("loanAmount").value;
+            let duration = document.getElementById("loanDuration").value;
+            let interestRate = 10 / 100 / 12; // 10% annual interest rate converted to monthly
+            let emi = (amount * interestRate * Math.pow(1 + interestRate, duration)) / (Math.pow(1 + interestRate, duration) - 1);
+            
+            if (amount && duration) {
+                document.getElementById("emi-result").innerHTML = "Your Estimated Monthly Installment (EMI) is KES " + emi.toFixed(2);
+            } else {
+                document.getElementById("emi-result").innerHTML = "Please enter valid loan amount and duration.";
+            }
+        }
+
+        document.getElementById('loanForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your application has been submitted successfully!');
+        });
+    </script>
+
+</body>
+</html>

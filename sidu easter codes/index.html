@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidu International Limited</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bestsidu.jpeg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            background: #003366;
+            color: gold;
+            padding: 14px;
+            font-size: 18px;
+        }
+
+        /* Company Title & Slogan */
+        .company-info {
+            margin-top: 10px;
+        }
+        .company-info h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: gold;
+            margin: 5px 0;
+        }
+        .company-info p {
+            font-size: 16px;
+            font-style: italic;
+            color: #ddd;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #0056b3;
+            padding: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            background: #007acc;
+            display: inline-block;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { background: gold; color: black; }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            position: relative;
+            animation: fade 1s ease-in-out;
+        }
+        @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+        .slide img { width: 100%; border-radius: 10px; }
+        .slide-text {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            right: 10%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .slide-text h2 { font-size: 20px; color: gold; }
+        .slide-text p { font-size: 14px; }
+        .slide-btn {
+            background: gold; color: black; padding: 10px 20px;
+            border-radius: 20px; cursor: pointer; transition: 0.3s;
+        }
+        .slide-btn:hover { background: orange; }
+
+        /* Loan Buttons */
+        .loan-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .loan-btn {
+            background: #007acc; color: white; padding: 15px;
+            font-weight: bold; border-radius: 10px; border: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .loan-btn:hover {
+            background: gold; color: black; box-shadow: 0 0 10px gold;
+        }
+
+        /* Login & Registration */
+        .auth-buttons { margin: 20px; }
+        .auth-btn {
+            background: green; color: white; padding: 12px 20px;
+            border-radius: 10px; border: none; font-size: 14px;
+            cursor: pointer; transition: 0.3s;
+        }
+        .auth-btn:hover { background: gold; color: black; }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            background: #003366;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        📞 0714175910 | 🌍 www.siduinternational.com | 📧 info@siduinternational.com
+    </div>
+
+    <!-- Company Info -->
+    <div class="company-info">
+        <h1>SIDU INTERNATIONAL LIMITED</h1>
+        <p>"Spring Board Innovation Dream Unit - Bridging the growth you can't acquire on your own."</p>
+    </div>
+
+   <!-- Navigation -->
+<div class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="about.html">About Us</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="blog.html">Blog</a>
+    <a href="reports.html">Reports</a>
+    <a href="board_members.html">Board Members</a>
+</div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="slide1.jpeg">
+            <div class="slide-text">
+                <h2>Join Sidu Today & Grow Your Future!</h2>
+                <p>Become a member and enjoy financial empowerment & bridge the growth you can't acquire on your own, business growth, and investment opportunities.</p>
+                <button class="slide-btn" onclick="location.href='join.html'">Join Us</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="slide2.jpeg">
+            <div class="slide-text">
+                <h2>Register Now & Unlock Your Potential</h2>
+                <p>Registration fee: Ksh 500 - Ensures system security, member verification & operational sustainability.</p>
+                <button class="slide-btn" onclick="location.href='register.html'">Register</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="slide3.jpeg">
+            <div class="slide-text">
+                <h2>Apply for a Loan & Grow Your Business</h2>
+                <p>We offer customized loan solutions tailored to your needs. Get started today!</p>
+                <button class="slide-btn" onclick="location.href='apply.html'">Apply Now</button>
+            </div>
+        </div>
+<div class="slide">
+            <img src="bgsidu.jpeg">
+            <div class="slide-text">
+                <h2>Money Respects those who respect it first</h2>
+                <p>Do you have an enterprise where you need capital?. Get started today!</p>
+                <button class="slide-btn" onclick="location.href='apply.html'">Apply Now</button>
+            </div>
+        </div>
+      
+    <!-- Loan Buttons -->
+    <div class="loan-buttons">
+        <button class="loan-btn" onclick="location.href='chama_savings.html'">Chama Savings</button>
+        <button class="loan-btn" onclick="location.href='logbook_loan.html'">Log Book Loan</button>
+        <button class="loan-btn" onclick="location.href='title_deed_loan.html'">Title Deed Loan</button>
+        <button class="loan-btn" onclick="location.href='construction_loan.html'">Construction Loan</button>
+        <button class="loan-btn" onclick="location.href='sme_loan.html'">SMEs (Biashara) Loan</button>
+        <button class="loan-btn" onclick="location.href='machinery_loan.html'">Machinery Loan</button>
+        <button class="loan-btn" onclick="location.href='tuktuk_loan.html'">Tuk Tuk Loan</button>
+        <button class="loan-btn" onclick="location.href='homefinace_loan.html'">Home finance Loan</button>
+        <button class="loan-btn" onclick="location.href='loantracking.html'">My Loan Status</button>
+        <button class="loan-btn" onclick="location.href='paymentportal.html'">Lipa Deni</button>
+        <button class="loan-btn" onclick="location.href='savingsaccountpage.html'">Sidu savings Account</button>
+
+
+    </div>
+
+    <!-- Login & Registration -->
+    <div class="auth-buttons">
+        <button class="auth-btn" onclick="location.href='login.html'">Login</button>
+        <button class="auth-btn" onclick="location.href='register.html'">Register</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        📍 Locations: Kiambu Indian Bazaar, Kiserian Branch,Toiyanka Building Room 41&42 | 📧 info@siduinternational.com | 🌍 www.siduinternational.com
+    </div>
+
+    <script>
+        let index = 0;
+        function autoSlide() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            index = (index + 1) % slides.length;
+            slides[index].style.display = "block";
+            setTimeout(autoSlide, 5000);
+        }
+        autoSlide();
+    </script>
+
+</body>
+</html>

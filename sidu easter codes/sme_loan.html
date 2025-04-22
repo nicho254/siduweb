@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDU INTERNATIONAL LIMITED - SMEs Loan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('sme.jpeg') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .upload {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            animation: fade 1.5s;
+        }
+        @keyframes fade {
+            from { opacity: 0.4; } 
+            to { opacity: 1; }
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <img class="slide" src="slide1.jpg" style="width:100%">
+        <img class="slide" src="slide2.jpg" style="width:100%">
+        <img class="slide" src="slide3.jpg" style="width:100%">
+    </div>
+
+    <div class="container">
+        <h2>SMEs Loan Application</h2>
+        
+        <form>
+            <label for="owner_name">Full Name:</label>
+            <input type="text" id="owner_name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required>
+
+            <label for="location">Business Location:</label>
+            <input type="text" id="location" required>
+
+            <label for="business_type">Business Type:</label>
+            <select id="business_type">
+                <option value="wholesale">Wholesale</option>
+                <option value="retail">Retail</option>
+                <option value="soko">Soko</option>
+                <option value="butchery">Butchery</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="loan_amount">Loan Amount (KES):</label>
+            <input type="number" id="loan_amount" required>
+
+            <label>Upload KYC Documents:</label>
+            <div class="upload">
+                <label for="id_front">Upload ID (Front):</label>
+                <input type="file" id="id_front" accept="image/*" required>
+                
+                <label for="id_back">Upload ID (Back):</label>
+                <input type="file" id="id_back" accept="image/*" required>
+
+                <label for="business_license">Upload Business License:</label>
+                <input type="file" id="business_license" accept="image/*, application/pdf" required>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Contact Us: 0722609727 | Email: siduinternational@gmail.com</p>
+        <p>Location: Kiambu Indian Bazaar & Kiserian Branch</p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); 
+        }
+        showSlides();
+    </script>
+
+</body>
+</html>
+``

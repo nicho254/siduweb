@@ -1,0 +1,72 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 📞 Top Header */
+.top-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 🔥 Header */
+header {
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+/* 🎥 Slider */
+.slider {
+    background: #e0e0e0;
+    padding: 20px;
+}
+
+/* 💰 Loan Calculator */
+.loan-calculator {
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+/* 📖 Info Section */
+.info-section {
+    padding: 20px;
+}
+
+/* 💬 Chat Button */
+.chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 💬 Chat Box */
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+}
+
+/* 📝 Footer */
+footer {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+}

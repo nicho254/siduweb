@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidu Loan Tracking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #0077b6;
+        }
+
+        .loan-info {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .loan-info p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+
+        .status {
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .on-time {
+            background-color: green;
+        }
+
+        .due-soon {
+            background-color: orange;
+        }
+
+        .late {
+            background-color: red;
+        }
+
+        .notify-btn, .pay-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: #0077b6;
+            border-radius: 5px;
+        }
+
+        .notify-btn:hover, .pay-btn:hover {
+            background-color: #005b8f;
+        }
+
+        .notification {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Loan Tracking & Payment System</h2>
+        <p>Track your loan status and get payment notifications.</p>
+
+        <div class="loan-info">
+            <p><strong>Loan Amount:</strong> KES 100,000</p>
+            <p><strong>Remaining Balance:</strong> KES 30,000</p>
+            <p><strong>Due Date:</strong> <span id="due-date">2025-03-25</span></p>
+            <p><strong>Loan Status:</strong> <span id="loan-status" class="status">Checking...</span></p>
+        </div>
+
+        <button class="notify-btn" onclick="checkLoanStatus()">Check Loan Status</button>
+
+        <div class="notification" id="notification"></div>
+
+        <button class="pay-btn" onclick="payWithMpesa()">Pay with M-Pesa</button>
+    </div>
+
+    <script>
+        function checkLoanStatus() {
+            const dueDate = new Date(document.getElementById("due-date").innerText);
+            const today = new Date();
+            const loanStatusElement = document.getElementById("loan-status");
+            const notificationElement = document.getElementById("notification");
+
+            if (today > dueDate) {
+                loanStatusElement.innerText = "Late Payment";
+                loanStatusElement.classList.add("late");
+                notificationElement.innerText = "⚠️ Your loan payment is overdue! Kindly clear the balance to avoid penalties.";
+                notificationElement.style.display = "block";
+
+                // Simulate sending an SMS or Email notification
+                setTimeout(() => {
+                    alert("📩 Sidu International: Your loan is overdue. Kindly make a payment immediately.");
+                }, 2000);
+            } else {
+                const daysRemaining = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+                if (daysRemaining <= 5) {
+                    loanStatusElement.innerText = "Due Soon";
+                    loanStatusElement.classList.add("due-soon");
+                    notificationElement.innerText = "⏳ Your loan payment is due in " + daysRemaining + " days. Please make your payment on time.";
+                    notificationElement.style.display = "block";
+
+                    setTimeout(() => {
+                        alert("📩 Sidu International: Your loan payment is due in " + daysRemaining + " days. Please pay to avoid penalties.");
+                    }, 2000);
+                } else {
+                    loanStatusElement.innerText = "On-Time Payment";
+                    loanStatusElement.classList.add("on-time");
+                    notificationElement.innerText = "✅ Your payments are on track!";
+                    notificationElement.style.display = "block";
+                }
+            }
+        }
+
+        function payWithMpesa() {
+            const phoneNumber = prompt("Enter your M-Pesa number:");
+            if (phoneNumber) {
+                alert("M-Pesa payment request sent to " + phoneNumber + ". Follow the instructions on your phone.");
+                // Here, integrate M-Pesa API to send actual payment request
+            } else {
+                alert("Payment cancelled.");
+            }
+        }
+    </script>
+
+</body>
+</html>

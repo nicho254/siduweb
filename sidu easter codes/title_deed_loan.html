@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Deed Loan - Sidu International</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="animate-slide">Title Deed Loan Application</h2>
+        <p class="animate-slide">Apply for a loan using your Title Deed as collateral. Complete the form below and upload the required documents.</p>
+
+        <form action="process-title-deed-loan.php" method="POST" enctype="multipart/form-data">
+
+            <!-- Personal Information -->
+            <label>Full Name:</label>
+            <input type="text" name="full_name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number:</label>
+            <input type="text" name="phone" required>
+
+            <label>Location:</label>
+            <input type="text" name="location" required>
+
+            <label>Next of Kin Name:</label>
+            <input type="text" name="next_kin" required>
+
+            <label>Next of Kin Phone:</label>
+            <input type="text" name="next_kin_phone" required>
+
+            <!-- Loan Details -->
+            <label>Amount Needed (KES):</label>
+            <input type="number" id="loanAmount" name="loan_amount" required>
+
+            <label>Repayment Duration (Months):</label>
+            <input type="number" id="loanDuration" name="loan_duration" required>
+
+            <p><b>Estimated Monthly Payment:</b> <span id="monthlyPayment">0</span> KES</p>
+
+            <!-- File Uploads -->
+            <label>Upload ID (Front):</label>
+            <input type="file" name="id_front" accept="image/*" required>
+
+            <label>Upload ID (Back):</label>
+            <input type="file" name="id_back" accept="image/*" required>
+
+            <label>Upload Selfie (Holding ID):</label>
+            <input type="file" name="selfie" accept="image/*" required>
+
+            <label>Upload Title Deed Document:</label>
+            <input type="file" name="title_deed" accept="application/pdf,image/*" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Sidu International Limited</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url('join1.jpeg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            width: 900px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Slider Section */
+        .slider {
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 90%;
+            text-align: left;
+        }
+
+        /* Sections */
+        .content {
+            padding: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Loans Section */
+        .loans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .loan-box {
+            background: #f1f1f1;
+            padding: 10px;
+            width: 45%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Register Button */
+        .register-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            background: #0056b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .loan-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Join Sidu International Limited</div>
+
+        <!-- SLIDER -->
+        <div class="slider">
+            <div class="slide fade">
+                <img src="stamp1.jpg" alt="Financial Growth">
+                <div class="text">
+                    <h3>Why Join Sidu?</h3>
+                    <p>We provide fast, reliable, and accessible financial solutions tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="slide fade">
+                <img src="join2.jpeg" alt="Loan Options">
+                <div class="text">
+                    <h3>Various Loan Options</h3>
+                    <p>We offer Personal, Business, Logbook, Construction, and Emergency Loans.</p>
+                </div>
+            </div>
+            <div class="slide fade">
+                <img src="member.jpeg" alt="Flexible Repayment">
+                <div class="text">
+                    <h3>Flexible Repayment Plans</h3>
+                    <p>Our loan repayment plans are structured to match your income and financial goals.</p>
+                </div>
+            </div>
+            <div class="slide fade">
+                <img src="join2.jpeg" alt="Customer Support">
+                <div class="text">
+                    <h3>24/7 Customer Support</h3>
+                    <p>Our dedicated team is available to guide you throughout your financial journey.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <h2>Loans We Offer</h2>
+            <div class="loans">
+                <div class="loan-box"><strong>✔ Personal Loan</strong></div>
+                <div class="loan-box"><strong>✔ Business Loan</strong></div>
+                <div class="loan-box"><strong>✔ Logbook Loan</strong></div>
+                <div class="loan-box"><strong>✔ Construction Loan</strong></div>
+                <div class="loan-box"><strong>✔ Emergency Loan</strong></div>
+            </div>
+
+            <h2>Why Take a Loan?</h2>
+            <p>Loans help you achieve your financial goals faster, from business expansion to emergency needs. 
+               At Sidu, we ensure secure and flexible financing for all your needs.</p>
+
+            <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change slide every 4 seconds
+        }
+    </script>
+
+</body>
+</html>
