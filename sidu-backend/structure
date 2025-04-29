@@ -1,0 +1,17 @@
+sidu-backend/
+│
+├── app.js
+├── .env
+├── package.json
+├── config/
+│   └── db.js
+├── controllers/
+│   └── authController.js
+├── models/
+│   └── User.js
+├── routes/
+│   └── authRoutes.js
+├── middleware/
+│   └── authMiddleware.js
+└── utils/
+    └── validators.js
